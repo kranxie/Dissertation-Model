@@ -1,0 +1,3 @@
+function loss = getWallLossPCM()
+end
+

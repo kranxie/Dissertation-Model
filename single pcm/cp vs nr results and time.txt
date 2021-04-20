@@ -1,0 +1,43 @@
+cp method:
+Time elapsed so far: 13.6348 min
+Total energy input: 18.4157 kWh -- target 18.4 for PCM
+Total energy stored in rocks: 15.6263 kWh
+Total energy stored in PCM: 4.0347 kWh
+Energy exchange with top plate during charge: 0.888047 kWh -- target 0.95
+Energy exchange with top plate during discharge: 0.203758 kWh -- target -0.14
+Energy lost from rocks section during charging: 0.202433 kWh -- target 0.24
+Energy lost from rocks section during discharging: 0.198889 kWh -- target 0.25
+Energy exchange between PCM section and wall during charging: -0.391485 kWh -- target 1.27
+Energy exchange between PCM section and wall during discharging: -3.65333 kWh -- target 0.43
+Overall energy balance during charging: -0.951182 kWh -- target 0
+
+
+energyRadPlateKWHCharge = sum(logQRadPlate(1:chargeTime))/3.6e6;
+energyRadPlateKWHDischarge = sum(logQRadPlate(chargeTime+1:totalTime))/3.6e6;
+energyWallLossRocksChargingKWH = sum(logRockLoss(1:chargeTime))/3.6e6;
+energyWallLossRocksDischargingKWH = sum(logRockLoss(chargeTime+1:totalTime))/3.6e6;
+energyWallPCMKWHCharge = sum(logQWallPCM(1:chargeTime))/3.6e6;
+energyWallPCMKWHDischarge = sum(logQWallPCM(chargeTime+1:totalTime))/3.6e6;
+
+nr method:
+Time elapsed so far: 19.8256 min
+Total energy input: 18.4157 kWh -- target 18.4 for PCM
+Total energy stored in rocks: 15.6263 kWh
+Total energy stored in PCM: 4.0347 kWh
+Energy exchange with top plate during charge: 0.888047 kWh -- target 0.95
+Energy exchange with top plate during discharge: 0.203753 kWh -- target -0.14
+Energy lost from rocks section during charging: 0.202433 kWh -- target 0.24
+Energy lost from rocks section during discharging: 0.19861 kWh -- target 0.25
+Energy exchange between PCM section and wall during charging: -0.391481 kWh -- target 1.27
+Energy exchange between PCM section and wall during discharging: -3.65224 kWh -- target 0.43
+Overall energy balance during charging: -0.951178 kWh -- target 0
+
+cp method, rocks only
+Time elapsed so far: 13.6473 min
+Total energy input: 19.3781 kWh -- target 19.3 rocks
+Total energy stored in rocks: 19.7891 kWh
+Energy exchange with top plate during charge: 0 kWh -- target 1.01 rocks
+Energy exchange with top plate during discharge: 0 kWh -- target +0.42 rocks
+Energy lost from rocks section during charging: 0.294136 kWh -- target 0.3 rocks
+Energy lost from rocks section during discharging: 0.289449 kWh -- target 0.3 rocks
+Overall energy balance during charging: -0.705143 kWh -- target 0
